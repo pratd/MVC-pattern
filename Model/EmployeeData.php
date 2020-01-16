@@ -6,6 +6,9 @@ class EmployeeData{
     public $empEmail;
     public $empDept;
     public $empPost;
+    public $salaryID;
+    public $empSalary;
+    public $empName;
 }
 
 ?>

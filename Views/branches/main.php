@@ -36,18 +36,28 @@
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($this->result as $value) {
+                    foreach ($this->salary as $value) {
                         $item = new EmployeeData();
                         $item = $value;
-                    ?>
-                    <tr>
-                        <td><?php echo $item->empID;?></td>
-                        <td><?php echo $item->empFirstName;?></td>
-                        <td><?php echo $item->empSurname;?></td>
-                        <td><?php echo $item->empEmail;?></td>
-                        <td><?php echo $item->empDept;?></td>
-                        <td><?php echo $item->empPost;?></td>
-                        <td> <form action="<?php echo constant('URL') .'updateSalary/getSalary/' . $item->empID;?>"
+                        if(isset($item->empSalary)){?>
+                            <tr>
+                                <td><?php echo $item->empID;?></td>
+                                <td><?php echo $item->empFirstName;?></td>
+                                <td><?php echo $item->empSurname;?></td>
+                                <td><?php echo $item->empEmail;?></td>
+                                <td><?php echo $item->empDept;?></td>
+                                <td><?php echo $item->empPost;?></td>
+                                <td><?php echo $item->empSalary;?></td>
+                            </tr>
+                        <?php } else { ?>
+                            <tr>
+                                <td><?php echo $item->empID;?></td>
+                                <td><?php echo $item->empFirstName;?></td>
+                                <td><?php echo $item->empSurname;?></td>
+                                <td><?php echo $item->empEmail;?></td>
+                                <td><?php echo $item->empDept;?></td>
+                                <td><?php echo $item->empPost;?></td>
+                                <td> <form action="<?php echo constant('URL') .'updateSalary/getSalary/' . $item->empID;?>"
                                 method="POST" class="createSalary">
                                 <div class="row">
                                     <div class="col-7 mt-2">
@@ -57,8 +67,9 @@
                                         <input type="submit" value="Add">
                                     </div>
                             </form>
-                        </td>
-                    </tr>
+                                </td>
+                        <?php } ?>
+
                     <?php }?>
                 </tbody>
             </table>

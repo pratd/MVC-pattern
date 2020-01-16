@@ -7,7 +7,7 @@ class connectDb{
     private $charset;
 
     public function __construct(){
-        $this->host = constant('URL');  //all the variables are defined in config file
+        $this->host = constant('HOST');  //all the variables are defined in config file
         $this->db   = constant('DB');
         $this->user = constant('USER');
         $this->password = constant('PASSWORD');
